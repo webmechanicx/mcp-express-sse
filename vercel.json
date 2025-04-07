@@ -10,11 +10,7 @@
     "routes": [
         { 
             "src": "/", 
-            "dest": "/" 
-        },
-        { 
-            "src": "/sse", 
-            "dest": "/" 
+            "dest": "dist/index.js" 
         }
     ] 
 
