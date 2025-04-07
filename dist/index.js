@@ -29,6 +29,9 @@ const app = (0, express_1.default)();
 // to support multiple simultaneous connections we have a lookup object from
 // sessionId to transport
 const transports = {};
+app.get("/", (_, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.status(200).send('App Root');
+}));
 app.get("/sse", (_, res) => __awaiter(void 0, void 0, void 0, function* () {
     const transport = new sse_js_1.SSEServerTransport('/messages', res);
     transports[transport.sessionId] = transport;
