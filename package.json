@@ -4,10 +4,8 @@
   "description": "![mcp server - HTTP with SSE](https://raw.githubusercontent.com/webmechanicx/mcp-express-sse/refs/heads/main/Screenshot-2025.jpg)\r &copy;collabnix.com",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
-    "build": "rimraf build && tsc",
-    "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add build",
+    "start": "node dist/index.js",
+    "build": "tsc && chmod 755 src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
