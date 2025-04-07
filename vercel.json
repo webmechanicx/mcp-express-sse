@@ -7,9 +7,13 @@
             "config": { "includeFiles": ["build/**"] }
         }
     ],
-    "route": [
+    "routes": [
         { 
             "src": "/", 
+            "dest": "/" 
+        },
+        { 
+            "src": "/sse", 
             "dest": "/" 
         }
     ] 
