@@ -37,3 +37,9 @@ npm install @types/express
 npm install nodemon
 
 npm install ts-node
+
+---
+
+npm install pre-commit
+
+npm install rimraf
