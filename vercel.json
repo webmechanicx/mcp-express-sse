@@ -7,10 +7,14 @@
             "config": { "includeFiles": ["build/**"] }
         }
     ],
-    "rewrites": [
+    "route": [
         { 
-            "source": "/(.*)", 
-            "destination": "/" 
+            "src": "/", 
+            "dest": "/" 
+        },
+        { 
+            "src": "/sse", 
+            "dest": "/" 
         }
     ] 
 
