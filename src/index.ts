@@ -20,6 +20,10 @@ const app = express();
 // sessionId to transport
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 
+app.get("/", async (_: Request, res: Response) => {
+  res.status(200).send('App Root');
+})
+
 app.get("/sse", async (_: Request, res: Response) => {
   const transport = new SSEServerTransport('/messages', res);
   transports[transport.sessionId] = transport;
