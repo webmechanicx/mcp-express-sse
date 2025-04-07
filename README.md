@@ -27,8 +27,13 @@ Step 5: In Inspector click the "Connect" button. That's it!!
 ## Dependencies
 
 npm install express
+
 npm install typescript
+
 npm install @types/node
+
 npm install @types/express
+
 npm install nodemon
+
 npm install ts-node
