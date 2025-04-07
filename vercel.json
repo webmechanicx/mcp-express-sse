@@ -10,8 +10,14 @@
     "rewrites": [
         { 
             "source": "/(.*)", 
-            "destination": "/sse" 
+            "destination": "/" 
         }
-    ]
+    ],
+    "routes": [
+        { 
+            "src": "/(.*)", 
+            "dest": "dist/index.js" 
+        }
+    ] 
 
 }
