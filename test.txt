@@ -1,0 +1,12 @@
+    "rewrites": [
+        { 
+            "source": "/(.*)", 
+            "destination": "/sse" 
+        }
+    ],
+
+    ### Deployment Ids
+
+    - 4t84qkwbn
+    - bkuhmeof0 
+    - 8labhngak
