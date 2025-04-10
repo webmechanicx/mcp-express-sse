@@ -15,17 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mcp_js_1 = require("@modelcontextprotocol/sdk/server/mcp.js");
 const sse_js_1 = require("@modelcontextprotocol/sdk/server/sse.js");
+const cors_1 = __importDefault(require("cors"));
 const zod_1 = require("zod");
 const server = new mcp_js_1.McpServer({
     name: "example-server",
-    version: "1.0.0",
-    capabilities: {
-        //resources: {},
-        tools: {},
-    },
+    version: "1.0.0"
 });
 // ... set up server resources, tools, and prompts ...
+server.tool("echo", { message: zod_1.z.string() }, (_a) => __awaiter(void 0, [_a], void 0, function* ({ message }) {
+    return ({
+        content: [{ type: "text", text: `Tool echo: ${message}` }]
+    });
+}));
+// Create Express app
 const app = (0, express_1.default)();
+// Enable CORS for all routes
+app.use((0, cors_1.default)());
 // to support multiple simultaneous connections we have a lookup object from
 // sessionId to transport
 const transports = {};
@@ -49,11 +54,6 @@ app.post("/messages", (req, res) => __awaiter(void 0, void 0, void 0, function* 
     else {
         res.status(400).send('No transport found for sessionId');
     }
-}));
-server.tool("echo", { message: zod_1.z.string() }, (_a) => __awaiter(void 0, [_a], void 0, function* ({ message }) {
-    return ({
-        content: [{ type: "text", text: `Tool echo: ${message}` }]
-    });
 }));
 app.listen(3001);
 //# sourceMappingURL=index.js.map
